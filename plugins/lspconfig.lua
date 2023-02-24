@@ -3,7 +3,7 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "tsserver", "rust_analyzer", "luau_lsp" }
+local servers = { "tsserver", "rust_analyzer", "luau_lsp"}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -11,7 +11,8 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-lspconfig.sumneko_lua.setup {
+
+lspconfig.lua_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 
